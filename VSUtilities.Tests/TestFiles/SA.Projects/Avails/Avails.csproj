@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{111F62E8-24ED-4625-9A60-58149C10C137}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>Avails</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Data">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mehdime.Entity">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Mehdime.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Security">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Web.ApplicationServices\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.ApplicationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.Serialization\v4.0_4.0.0.0__b77a5c561934e089\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ServiceModel\v4.0_4.0.0.0__b77a5c561934e089\System.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Data">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Bookmarks">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Bookmarks.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.BusinessLogic">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.UI.Mvc">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.UI.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Authenticator">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Google.Authenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Projects">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Projects.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.ExcelReportEngine">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.ExcelReportEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.ActionEngine">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.ActionEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Search">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Web.Extensions\v4.0_4.0.0.0__31bf3856ad364e35\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="StandardReports">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\StandardReports.dll</HintPath>
+    </Reference>
+    <Reference Include="Filmtrack.Common.EventBus">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Filmtrack.Common.EventBus.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.EventBus.Contracts">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.EventBus.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Activities">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Activities\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.UI">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Syncfusion.XlsIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Vault.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Vault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Data.DataSetExtensions\v4.0_4.0.0.0__b77a5c561934e089\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization.Less">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Optimization.Less.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Action">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Action.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Activities.DurableInstancing">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Activities.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Activities.DurableInstancing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.DurableInstancing">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Runtime.DurableInstancing\v4.0_4.0.0.0__31bf3856ad364e35\System.Runtime.DurableInstancing.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Exception">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.DatabaseVersioning">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.DatabaseVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilmTrack.Avails.UI.Areas.Admin.Models.ChartOfAccounts\ChartOfAccountViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Admin.Models.ChartOfAccounts\MainAccountViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Admin.Models.ChartOfAccounts\PageViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Logic\ContractRevisionResponse.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Logic\ContractSummaryHeaderLogic.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Logic\ContractVersionsLogic.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Models.Versions\ContractHistoryMenuItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Models.Versions\ContractPartyViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Models.Versions\ContractVersionViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Areas.Contracts.Models.Versions\VersionDialogViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\AreaCoveredBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\AuditLogEntryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\AvailabilityEffectBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\BankBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\BinderBase.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\BusinessUnitBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ChannelAssignmentBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ChannelBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\CollectionAgencyBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactAccountStatusBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactAccountStatusTypeSystemCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactAlternateNameBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactBusinessUnitBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactOtherDataAttributeValueBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactRelationshipBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactRelationshipTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactRoleBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactRoleTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactRoleTypeSystemCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContactSimpleBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractBatchBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractCardBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractCardCategoryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractCardProjectBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractCardStatusBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractCardViewTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractConditionBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractConditionTemplateBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractConditionTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractDealStatusBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractDealTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractDocumentTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractGrossReceiptDispositionBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractGrossReceiptDispositionDetailBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractInvoiceBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractInvoiceScheduleItemBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractJournalEntryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractOtherDataAttributeValueBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractProjectBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractProjectDataBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractProjectPriceBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractReleaseBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractRoyaltyLineItemTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractShipmentMaterialTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractStatusBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractTimelineItemTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ContractTimelineItemTypeSystemCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\CountryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\CurrencyBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\DispositionTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\FeeCalcIngestStatementTemplateBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\FunctionalAreaBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\GenreTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\GLAccountBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\HoldbackTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\InvoiceBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\InvoiceItemCategoryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\InvoiceItemCategorySystemCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\InvoiceLineItemBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LanguageAssignmentBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LanguageBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LedgerAreaBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LedgerCategoryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LicenseBehaviorBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LicenseTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\LogActionBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\NegotiationStageBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\OtherDataAttributeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\OtherDataAttributeSetBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\OutlookItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\PeriodTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectAssignmentBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectBusinessUnitBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectCardBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectDialogueLanguageBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectGenreBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectGroupBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectMarketBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectOtherDataAttributeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectOtherDataAttributeSetBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectRatingBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectStatusBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectSubtitleLanguageBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ProjectTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RecgonizeRevenueBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RegionAskingPriceBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RegionBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RegionZoneBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportCriteriaBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportCriteriaDefaultBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportCriteriaDefaultSetBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportCriteriaTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ReportGroupBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ResponsiblePartyBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RightAssignmentBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RightBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RightGroupBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RightTypeCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\RoyaltyIngestionMappingBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\SalesAgencyBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ServiceClients.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\ShippingCompanyBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\SignatorBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\SystemLanguageBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\SystemSettingBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TaxTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TelerikUtility.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TerritoryAskingPriceBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TerritoryAssignmentBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TerritoryBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\TerritoryTypeCodeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\UIUtility.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\VendorBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\VideoFormatTypeBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Binders\WorkflowStateBinder.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\ContractStatusComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\ContractTypeComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\CurrencyComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\DealStatusComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\InvoiceItemCategoryComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\LanguageComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\LicenseTypeComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\LogActionComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\RightComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ComboBoxes\TerritoryByContractComboBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\ContactComboBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\NotificationType.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\ProjectComboBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\RegionComboBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\SavedSearchComboBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\TerritoryComboBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls.ServerControls\TransparentImage.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Controls\AddSelectedEventHandler.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Controls\ApplicationVersion.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\ContractCardProjectListOnDemand.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\ContractLeftNav.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\ContractSummaryHeader.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\SavedSearchSelection.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\SectionHeader.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Controls\UpdateListClickedEventHandler.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Controls\Warning.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\AvailsDataService.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\BaseController.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\ComboBoxRequest.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\ComboBoxRequestExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\FieldSortSpecification.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\FilterConjunction.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\GridRequest.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\GridRequestExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\IAvailsCrudController.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\SearchFilter.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\SearchFilterPair.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\SearchFilterSpecification.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\SearchOperator.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core.MVC\SortDir.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Core\ContactPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Core\ContractPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Core\ContractUserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Core\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI.Extensions\ControllerExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\HtmlExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\JsonpResult.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\PartialPackageManager.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\PartialScript.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\PartialStyles.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\QueryStringUtilExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Extensions\RazorPartialBridge.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\Channel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\ChannelModelDataContext.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\ContractVersionSet.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\GLAccount.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\Invoice.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\InvoiceItemCategory.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\InvoiceLineItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\InvoiceLineItemPayment.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\InvoiceModelDataContext.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\ProjectView.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\Right.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightGroup.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightMember.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightModelDataContext.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightRole.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightRoleType.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\RightTypeCode.cs" />
+    <Compile Include="FilmTrack.Avails.UI.LinqModels\ScheduleItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\ControllerActionResultViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\LeftRightTreeViewsViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\ProjectCodeModelDataContext.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\Projects.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\PromptModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\RecognizedRevenueByMonth.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\RecognizedRevenueResponse.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\Region.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\RegionMember.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\RegionZone.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\SelectionTreeViewViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\Territory.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\TerritoryModelDataContext.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\TerritoryTreeViewDataSourceViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\TextValuePair.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\TreeViewActionButton.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Models\TreeViewDataSourceViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\ContractTemplates.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavAdmin.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavAlerts.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavContractSearch.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavMaintenance.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavPartyDetails.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavPartySearch.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavPayments.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavRecoupment.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation.NavAreas\NavReports.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\NavItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\NavItemKind.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\NavMatcher.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\NavTopItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\NavTopItemAreas.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Navigation\RoleHelper.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Resources\AvailsResources.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Resources\QueryStringKeys.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Resources\SessionKeys.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\Column.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\Field.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\FieldValue.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\ISearch.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\ISearchChannel.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\ResultSet.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\Row.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\RowItem.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SavedSearch.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SavedSearchAuth.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SearchClient.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SearchCriteria.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SearchResponse.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SearchResponseStats.cs" />
+    <Compile Include="FilmTrack.Avails.UI.StarCmSearchService\SearchView.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Util\DateUtility.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Util\SitePages.cs" />
+    <Compile Include="FilmTrack.Avails.UI.Util\StringUtility.cs" />
+    <Compile Include="FilmTrack.Avails.UI\BaseMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI\ClientLogoManger.cs" />
+    <Compile Include="FilmTrack.Avails.UI\DefaultMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.UI\ModelBindingConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Avails.dll.licenses" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FilmTrack.Avails.UI.Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

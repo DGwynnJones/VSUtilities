@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{0C17E5DB-C8B1-4D3C-9ACC-CB8ABC30A1EF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>FilmTrack.Avails.Action</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FilmTrack.Avails.ActionEngine">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\FilmTrack.Avails.ActionEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Data">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\FilmTrack.Avails.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mehdime.Entity">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\Mehdime.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.BusinessLogic">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\FilmTrack.Avails.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\FilmTrack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Exception">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\FilmTrack.Common.Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>.\FilmTrack.Avails.ActionReferences\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\GenerateAllocations.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\RequiredField.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemCategoryBillingGroupCheck.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\GenerateRevenueCardAllocations.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\AllocationRuleVectorsOnContract.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\RecalcNetspace.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractFinancialSummaryTotal.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\PostContract.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemAllocationsEqualsRevenue.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractTotalEqBillingScheduleTotal.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractPartyRolesMatchContacts.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractAndCardsStartDatesLessOrEqToEndDate.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\EstablishContractRoyaltyConsumptionHistory.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\RoyaltyDefinitionCannotOverlap.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractPartyAlternateNamesMatchContacts.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemAmountEqualsAllocationsTotal.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\EnsureContractNotPosted.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemAllocationsMatchNetspace.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractHasSinglePrimaryPartyPerRole.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Actions\ResubmitFeeCalcStatements.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractCardsHaveProjectTerritoryRightAssignments.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractPartyContactMethodMatchesContact.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemProjectsHaveDates.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractHasAtLeastOneCard.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\BillingGroupLimitationsOnContract.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractLicenseeAndLicensorHaveValidRoles.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\BillingGroupsDontOverlap.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\RoyaltyDefinitionLimitationsOnContract.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemProjectsOnContract.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ScheduleItemAllocationsMatchBillingGroups.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FilmTrack.Avails.Action.Validations\ContractAmountPerTitleEqualsTotalHighestPerBillingGroup.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

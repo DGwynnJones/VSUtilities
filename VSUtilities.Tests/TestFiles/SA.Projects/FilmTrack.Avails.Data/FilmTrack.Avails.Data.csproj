@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{58780A2B-9E6B-44D6-A79D-A833AA1361F0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>FilmTrack.Avails.Data</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.ComponentModel.DataAnnotations\v4.0_4.0.0.0__31bf3856ad364e35\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.EventBus.Contracts">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.EventBus.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Core">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Avails.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Filmtrack.Common.EventBus">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Filmtrack.Common.EventBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Mehdime.Entity">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Mehdime.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Security">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Data">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Projects">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\FilmTrack.Common.Projects.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web\CompiledLibraries\AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilmTrack.Avails.Data.Attributes\AutoGenerateApiControllerAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Attributes\NoForeignKeyLookupAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Attributes\PrecisionAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Attributes\RequiredIfAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Attributes\SystemSettingDescriptorAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Attributes\UnicodeAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Conventions\DecimalConvention.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Conventions\StringConvention.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\ContractRoyaltyDefinitionsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\FeeCalcsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\FinancialSummaryHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\InstallmentsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\LicensingActivityResults.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\ParticipationsActivityHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\ParticipationsReportsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\ParticipationsReportsResults.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\ParticipationsStatementsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\RoyaltyReportConsumption.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\RoyaltyReportOverage.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\RoyaltyReportsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\SubsetsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helpers\SystemSettingsHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Helper\DateTriggerHelper.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Interface\IAvailsDbContext.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Migrations\Configuration.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Migrations\_221.cs" />
+    <Compile Include="FilmTrack.Avails.Data.QueryExtensions\ProjectIQueryableExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Reports\SalesTotalsYtd.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity.ViewModel\CreateInvoiceResult.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ChannelHierarchyBranchEdge.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ChannelHierarchyRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ChannelRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContactRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractAllocationRuleRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractCardCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractFeeCalcCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractFeeCalcReportsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractFeeCalcStatementsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractInvoiceScheduleItemAllocationRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractInvoiceScheduleItemProjectInstallmentsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractInvoiceScheduleItemProjectsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractInvoiceScheduleItemRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractRoyaltyReportingScheduleCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ContractRoyaltyReportSchedulePeriodsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\DefaultContactsCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\DTUpdateDataAccess.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\GenerateAllocationsForScheduleItemsResult.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\HangfirePendingJobRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\HangfirePendingJobsCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\InvestmentSchedules.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\InvoiceCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\InvoiceProjectAmount.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\InvoiceRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ITransitionActionRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\NetCalcEventCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\NetCalcEventRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\PageContextToEventAreasRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ParticipationsIngestMappingRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ProjectHierarchyRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ReportCriteriaCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ReportQueueEventLogger.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ReportQueueItemCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\ReportQueueItemRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\RevenueAllocationCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\RightHierarchyBranchEdge.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\RightHierarchyRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\RightRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\RoyaltyIngestStatementRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\SystemAuditLogCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\TerritoryHierarchyBranchEdge.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\TerritoryHierarchyRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\TerritoryRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\TransitionActionRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Entity\VectorHierarchyCommands.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\BillingGroupAllocationConflicts.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ContractCardAssignmentCounts.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ContractPartyInfo.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ContractPartyMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ContractRightWithWrongDatesData.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\IValidationRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\IVectorOverlapService.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\LimitationNotOnContract.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\OverlapExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\Project.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ScheduleItemAllocationAmounts.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ScheduleItemAllocationSumAndMaxByProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ScheduleItemAndRevenueAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ScheduleItemProjectNotOnContract.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\ValidationRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.Validation\VectorOverlapService.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\BillingProjectViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\ContractInvoiceScheduleItemProjectRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\ExclusionAnomalyRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\FinancialSummaryViewRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\GenericErrorResult.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\ParticipationsContractRankingViewRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository.ViewModel\ProjectAltCardProjectAssignmentTreeRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\AmbientDataAccessBase.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\AvailsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\CommandQueryBase.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\DbContextNotLocatedException.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\DbContextScopeExtensions.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\IAvailsRepository.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\LinqExpressionBuilder.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\RepositoryBase.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\SprocCommand.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\SqlParam.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Repository\TypeConverter.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\DisplayGroup.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\DisplayTemplate.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\DisplayTemplateColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\Field.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SavedSearch.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SavedSearchContract.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SavedSearchCriterion.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SavedSearchInvoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SavedSearchView.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\SearchType.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Search\Table.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Security\AvailsClaim.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Security\AvailsClaimsPrincipal.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Security\AvailsClaimsSecurityException.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Security\AvailsSecurableAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data.Security\AvailsSecurableTypeManager.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\Anomaly.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ChannelViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractBillingGroupValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractInvoiceScheduleItemProjectViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractInvoiceScheduleItemProjectWizardViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractInvoiceScheduleItemViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractRevenueAllocationViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ContractSummaryHeaderViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\EntityDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\EntityLevel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\EntityName.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ExclusionAnomaly.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\FinancialSummaryViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ParticipationsContractRankingViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ProjectAltCardProjectAssignmentTreeModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ReadResult.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\RightViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\RowNumberModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ScheduleItemFeeParamsViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\ScheduleItemRecurrenceOptionsViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\SystemLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data.ViewModels\TerritoryViewModel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Account.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AccountStructure.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AccountType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ActionMsgType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ActionSeverityLevel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Agreement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AllowDefaultValueKeyAttrbitute.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AspectRatio.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AuditActionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AuditedTable.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AuditLog.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AutoNumberDefault.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AvailabilityEffect.cs" />
+    <Compile Include="FilmTrack.Avails.Data\AvailsDbContext.cs" />
+    <Compile Include="FilmTrack.Avails.Data\BaseEntity.cs" />
+    <Compile Include="FilmTrack.Avails.Data\BusinessUnit.cs" />
+    <Compile Include="FilmTrack.Avails.Data\BusinessUnitMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Channel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ChannelMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ChannelRelation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ChartOfAccount.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ChaseAction.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Contact.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactAccountStatusType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactAccountStatusTypeSystemCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactAlternateName.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactRelationship.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactRelationshipType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactRole.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactRoleType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContactRoleTypeSystemCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Contract.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRule.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRuleChannel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRuleLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRuleProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRuleRight.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractAllocationRuleTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBatch.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroup.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupChannel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupProjectCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupRight.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractBillingGroupTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCard.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusion.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusionLanguageAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusionProjectAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusionRightAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusionRightChannelAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardExclusionTerritoryAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardLanguageAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardProjectAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardRightAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardRightChannelAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardTerritoryAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCardViewType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractCondition.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractConditionTemplate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractConditionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractDealStatus.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractDealType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractDocumentType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcDateMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcExecutionTiming.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcIngestStatement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcIngestStatementInputValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcIngestStatementType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcInput.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcInputType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReport.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReportLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReportLineAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReportRevenue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReportRevenueProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractFeeCalcReportRevenueProjectAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractGrossReceiptDisposition.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractHigherRankedParticipationsContract.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemDefault.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemDefaultSet.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemFeeParameter.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemProjectCentricDetail.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemProjectFeeCalcInputCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemProjectInstallment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractInvoiceScheduleItemProjectInvoiceLineItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractJournalEntry.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementAreaMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementCategoryMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementColumnMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementCurrencyMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementProjectMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementRightMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerStatementsMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractLedgerTempImport.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractMaterial.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractMaterialDeliveryStatus.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCard.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCardLanguageAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCardProjectAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCardRightAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCardRightChannelAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractNetCardTerritoryAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractParty.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractProjectCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractProjectData.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractProjectPrice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractProjectTelecastSchedule.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractProjectTelecastScheduleTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractReleaseBoxOffice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractReleaseData.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractReleaseTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractReportingRegion.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRevenueAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRevenueCard.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRevenueCardAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyConsumptionHistory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyData.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRule.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleChannel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleReportingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleRight.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDeductionRuleTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinition.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionAttributeSet.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionChannel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionReserve.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionRight.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyDefinitionTier.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyLineItemType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyReportingSchedule.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyReportingSchedulePeriod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyReportingSchedulePeriodDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyReportingScheduleProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyScheduleItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyScheduleItemDetail.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractRoyaltyTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractShipment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractShipmentMaterial.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractShipmentMaterialType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractStatus.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemChannel.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemRight.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemRoleType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemTerritory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemTypeRole.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractTimelineItemTypeSystemCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ContractVersionSet.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Country.cs" />
+    <Compile Include="FilmTrack.Avails.Data\CountryLanguage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Currency.cs" />
+    <Compile Include="FilmTrack.Avails.Data\DataType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\DateUnit.cs" />
+    <Compile Include="FilmTrack.Avails.Data\DefaultContact.cs" />
+    <Compile Include="FilmTrack.Avails.Data\DispositionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSource.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSubscription.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSubscriptionRecord.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSubscriptionStatus.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSubscriptionTemplate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\EventSubscriptionTemplateMvcAction.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExcelColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExcelHorizontalAlignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExcelPaperOrientation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExcelPaperSize.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExcelVerticalAlignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExchangeRate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ExchangeRateCloseDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcAggregateOperation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcGuaranteeEvaluationOrder.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcIngestStatementTemplate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcIngestStatementTemplateInput.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcInputCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcInputTypeTargetDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FeeCalcReallocationMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FinancialSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\FunctionalArea.cs" />
+    <Compile Include="FilmTrack.Avails.Data\GenericDictionaryPayload.cs" />
+    <Compile Include="FilmTrack.Avails.Data\GLAccount.cs" />
+    <Compile Include="FilmTrack.Avails.Data\HangfirePendingJob.cs" />
+    <Compile Include="FilmTrack.Avails.Data\HoldbackType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvestorPercentage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Invoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceActionCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceActionLogEntry.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceItemCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceItemCategorySystemCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceLineItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceLineItemAllocation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceLineItemPayment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\InvoiceLineItemPaymentSplit.cs" />
+    <Compile Include="FilmTrack.Avails.Data\IPersistableObject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Language.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LanguageMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LedgerStatementArea.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LedgerStatementCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LicenseBehavior.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LicenseType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LockoutDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\LogAction.cs" />
+    <Compile Include="FilmTrack.Avails.Data\MainAccountSegment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Material.cs" />
+    <Compile Include="FilmTrack.Avails.Data\MenuItemPermission.cs" />
+    <Compile Include="FilmTrack.Avails.Data\NegotiationStage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\NetCalcEvent.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Number.cs" />
+    <Compile Include="FilmTrack.Avails.Data\OtherDataAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data\OtherDataAttributeSet.cs" />
+    <Compile Include="FilmTrack.Avails.Data\OtherDataAttributeValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\OtherDataAttributeValueProject.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PageContextToEventArea.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsActivity.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsActivityLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsActivityLineValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsActivityType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMappingCalculatedColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMappingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMappingColumnType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMappingTranslation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsIngestionMappingTranslationType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReport.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportingColumnType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportLineShare.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportLineShareCalculation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportLineShareReserve.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportLineValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReportSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReserveType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsReserveTypeReportingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementAvailableReportLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementFinancialSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementReport.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementReportLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementReportSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementResults.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ParticipationsStatementSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Payment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PaymentDisbursement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PercentageType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PeriodType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PhoneType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\PostedContractEditSetting.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProducerContract.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCard.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardChannelAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardContractCard.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardEvent.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardLanguageAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardProjectAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardProjectSelection.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardRightAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectAltCardTerritoryAssignment.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectDisplayItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectExternalSystem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectHierarchyEdgeView.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectMembers.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Projects.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectTimelineItemType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ProjectType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RecurrenceDaysOfWeek.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RecurrenceMonthlySequence.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RecurrenceType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RecurrenceTypeDaysOfWeekMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RegionAskingPrice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RegionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RegionZone.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Report.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportAvailableCriteriaType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportAvailsKey.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteria.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaBatchYearsChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDateChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefault.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultDate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultDateChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultDisplayChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultsDateChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultsDisplayItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultSet.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaDefaultStringValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaProjectDisplayChoice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaSession.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaStringValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportCriteriaType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelColumnSetting.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelColumnSettingOverride.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelConditionalFormatSetting.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelFormatConditionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelFormatOperatorType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelGlobalSetting.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportExcelGlobalSettingOverride.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportGroup.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportGroupMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportLog.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportOutput.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportOutputsAvailable.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportQueueItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportQueueItemEvent.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportQueueItemEventType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ReportQueueItemStatusType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ResponsibleParty.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RevenueRecognitionMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RevenueRecognitionMethodInvoiceCategory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RevenueRecognitionMethodSystemCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Right.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightChannelMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightGroupType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightRelation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightRole.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightRoleType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RightTypeCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyAttribute.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyCalculationBasi.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyCalculationMethod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyConsumptionHistoryRecordType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyDeductionRuleCombinationOption.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyDeductionRuleTimingOption.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestionMapping.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestionMappingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestionMappingColumnType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestionMappingTranslation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestionMappingTranslationType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestStatement.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestStatementLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestStatementLineError.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyIngestStatementLineValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyRecoupmentPeriod.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReport.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportingColumn.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportingColumnType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportLine.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportLineShare.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportLineShareCalculation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportLineValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyReportSummary.cs" />
+    <Compile Include="FilmTrack.Avails.Data\RoyaltyUpperLimitType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Schedule.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ShippingCompany.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Subset.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SubsetSource.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemAuditLog.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemAuditLogEntry.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemAuditLogEntryValue.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemSetting.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemSettingsMenuItem.cs" />
+    <Compile Include="FilmTrack.Avails.Data\SystemUndeletableId.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TargetType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TaxType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TaxTypeRate.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Territory.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryAskingPrice.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryLanguageMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryMember.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryRelation.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryRole.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryRoleType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TerritoryTypeCode.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TimeLog.cs" />
+    <Compile Include="FilmTrack.Avails.Data\TransactionType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ValidationDbContextAccess.cs" />
+    <Compile Include="FilmTrack.Avails.Data\ValidationMessages.cs" />
+    <Compile Include="FilmTrack.Avails.Data\vault_Applications.cs" />
+    <Compile Include="FilmTrack.Avails.Data\vault_Categories.cs" />
+    <Compile Include="FilmTrack.Avails.Data\vault_Files.cs" />
+    <Compile Include="FilmTrack.Avails.Data\VideoFormatType.cs" />
+    <Compile Include="FilmTrack.Avails.Data\Workflow.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowAction.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowState.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransition.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionAction.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionActionConfiguration.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionActionStage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionAttempt.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionAttemptActionResult.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionAttemptActionResultMessage.cs" />
+    <Compile Include="FilmTrack.Avails.Data\WorkflowTransitionRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FilmTrack.Avails.Data.Migrations\_221.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

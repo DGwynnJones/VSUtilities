@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DE3613E0-5A23-4574-B532-DCAEF886EF29}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>FilmTrack.Avails.BusinessLogic</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Web">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.ActionEngine">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Avails.ActionEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Data">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Avails.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mehdime.Entity">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\Mehdime.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Avails.Core">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Avails.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Data">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Common.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.EventBus.Contracts">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Common.EventBus.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FilmTrack.Common.Exception">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Common.Exception.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="Filmtrack.Common.EventBus">
+      <HintPath>C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\Filmtrack.Common.EventBus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilmTrack.Avails.BusinessLogic.ClientControls\IKeyStorageProvider.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.ClientControls\SessionStorageProvider.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\FeeCalcStatementsLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\IReportQueueFileWriter.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\ProjectAltCardsProcessorLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\ReportQueueFileWriter.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\ReportQueueLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Logic\ReportQueueManager.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron.Models\ReportOutputInfo.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\HangfireQueueProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\IngestSimulatedFeeCalcStatementsProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\LockManager.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\NetSpaceProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\ProcessLock.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\ProjectAltCardsProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\ReportQueueCancellerProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\ReportQueueCleanUpProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\ReportQueueProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\SystemAuditLogProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Cron\TickleProcessor.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Helpers\BrokerSubscriptionHelper.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Helpers\RelatedContractHelper.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Helpers\SubscriptionDescriptionHelper.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Helpers\TargetInstanceHelper.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Logic\DateTriggerCommonLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Logic\DateTriggerCopyLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Logic\NewContractTimelineItemTriggerLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Logic\ProjectTimelineItemTriggerLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Models.Base\DateTriggerReactivateRequestBase.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Models.Base\DateTriggerRequestParams.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Models.Base\DateTriggerSaveRequestBase.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Models\NewContractTimelineItemTriggerSaveRequest.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.DateTriggers.Models\ProjectTimelineItemTriggerSaveRequest.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Workflow.Models\TransitionWorkflowStateEnum.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Workflow.Models\TransitionWorkflowStateResult.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Workflow\ContractWorkflowLogic.cs" />
+    <Compile Include="FilmTrack.Avails.BusinessLogic.Workflow\InvoiceWorkflowLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

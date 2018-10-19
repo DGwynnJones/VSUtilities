@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\dgwynnjones\source\RMSOriginal\Current Version\Avails-5.1.306.6759\bin\FilmTrack.Common.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{510FE8CB-8450-4E70-B6D0-1347AC4D0B10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>FilmTrack.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.202.74</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>FilmTrack.Common</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassMap.cs" />
+    <Compile Include="ClassMapInfo.cs" />
+    <Compile Include="CollectionBase`1.cs" />
+    <Compile Include="CryptographyUtility.cs" />
+    <Compile Include="DataSetHelper.cs" />
+    <Compile Include="DateRange.cs" />
+    <Compile Include="DateRangeUtility.cs" />
+    <Compile Include="DateTimeUtility.cs" />
+    <Compile Include="EmailSystemUtility.cs" />
+    <Compile Include="EventBusDataAttribute.cs" />
+    <Compile Include="EventBusIgnoreAttribute.cs" />
+    <Compile Include="EventBusTopicAttribute.cs" />
+    <Compile Include="ImageUtility.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ObjectComparer`1.cs" />
+    <Compile Include="ObjectStringKeyBase.cs" />
+    <Compile Include="DatabasePersistenceAttribute.cs" />
+    <Compile Include="DatabaseIgnoreColumnAttribute.cs" />
+    <Compile Include="DatabaseColumnAttribute.cs" />
+    <Compile Include="DatabaseMapAttribute.cs" />
+    <Compile Include="DateUnit.cs" />
+    <Compile Include="SearchTermBehavior.cs" />
+    <Compile Include="AsciiCode.cs" />
+    <Compile Include="GetByKeyMethodDelegate`1.cs" />
+    <Compile Include="GetByStringKeyMethodDelegate`1.cs" />
+    <Compile Include="GetByCodeMethodDelegate`1.cs" />
+    <Compile Include="DeleteByKeyMethodDelegate.cs" />
+    <Compile Include="SaveMethodDelegate`1.cs" />
+    <Compile Include="LoadMethodDelegate`1.cs" />
+    <Compile Include="GetListMethodDelegate`1.cs" />
+    <Compile Include="FillableCollectionBase`1.cs" />
+    <Compile Include="IDataRowLoadable.cs" />
+    <Compile Include="IFillable.cs" />
+    <Compile Include="INameable.cs" />
+    <Compile Include="IObjectBase.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="ObjectBase.cs" />
+    <Compile Include="QueryHash.cs" />
+    <Compile Include="ReadOnlyCollectionBase`1.cs" />
+    <Compile Include="SortProperty.cs" />
+    <Compile Include="StorageSizeUnit.cs" />
+    <Compile Include="TimeLength.cs" />
+    <Compile Include="UrlBuilder.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Threading\LimitedConcurrencyLevelTaskScheduler.cs" />
+    <Compile Include="ServiceModel\AutomaticBindingServiceFactory.cs" />
+    <Compile Include="ServiceModel\WsHttpBindingConfigAttribute.cs" />
+    <Compile Include="ServiceModel\WsHttpSslBindingConfigAttribute.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Management\EventData.cs" />
+    <Compile Include="Management\EventLogWebEventProvider.cs" />
+    <Compile Include="Management\WebApplicationInformation.cs" />
+    <Compile Include="Management\WebErrorEvent.cs" />
+    <Compile Include="IO\Directory.cs" />
+    <Compile Include="IO\DirectoryInfo.cs" />
+    <Compile Include="IO\File.cs" />
+    <Compile Include="IO\FileAttributes.cs" />
+    <Compile Include="IO\FileInfo.cs" />
+    <Compile Include="IO\FileSystemInfo.cs" />
+    <Compile Include="IO\Helpers.cs" />
+    <Compile Include="IO\NamespaceDoc.cs" />
+    <Compile Include="IO\Path.cs" />
+    <Compile Include="IO\Win32\Win32Consts.cs" />
+    <Compile Include="IO\Win32\Win32Enums.cs" />
+    <Compile Include="IO\Win32\FileDirectoryInfo.cs" />
+    <Compile Include="IO\Win32\Interop.cs" />
+    <Compile Include="IO\Win32\WIN32_FILE_ATTRIBUTE_DATA.cs" />
+    <Compile Include="IO\Win32\WIN32_FIND_DATA.cs" />
+    <Compile Include="ExtensionMethods\DateExtensions.cs" />
+    <Compile Include="ExtensionMethods\DecimalExtensions.cs" />
+    <Compile Include="ExtensionMethods\EnumExtensions.cs" />
+    <Compile Include="ExtensionMethods\GuidExtensions.cs" />
+    <Compile Include="ExtensionMethods\ObjectExtensions.cs" />
+    <Compile Include="ExtensionMethods\StreamExtensions.cs" />
+    <Compile Include="ExtensionMethods\StringExtension.cs" />
+    <Compile Include="Configuration\AssemblyPatchAttribute.cs" />
+    <Compile Include="Configuration\AssemblyBuildDateAttribute.cs" />
+    <Compile Include="Configuration\AssemblyCompanyUrlAttribute.cs" />
+    <Compile Include="Configuration\AssemblyCompanySupportEmailAttribute.cs" />
+    <Compile Include="Configuration\ProviderBase.cs" />
+    <Compile Include="Configuration\ProviderCollection`1.cs" />
+    <Compile Include="Configuration\ProviderConfigurationSection.cs" />
+    <Compile Include="Configuration\ProviderManager`1.cs" />
+    <Compile Include="Caching\CacheKey.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheSetting.cs" />
+    <Compile Include="Caching\Configuration\CacheConfigSection.cs" />
+    <Compile Include="Caching\Configuration\CacheSettingsConfigurationElement.cs" />
+    <Compile Include="Caching\Configuration\CacheSettingCollection.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
