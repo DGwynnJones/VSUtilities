@@ -15,7 +15,8 @@ namespace VSUtilities.Tests
         string _TestSolutionFile = Path.Combine(TestContext.CurrentContext.TestDirectory, @"TestFiles\SA.Web.sln");
 
         string _ProductionFolder = @"C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web";
-
+        string _TestProjectFolder = @"C:\Users\dgwynnjones\source\repos\SA.Utilities";
+        
 
         [Test]
         public void Basic_()
@@ -62,9 +63,21 @@ namespace VSUtilities.Tests
         }
 
         [Test]
+        public void Open_Project_Files_TestSolution()
+        {
+            TestAllProjectsInFolder(_TestProjectFolder);
+        }
+
+
+        [Test]
         public void Open_Project_Files_PROD()
         {
-            var files = Directory.GetFiles(_ProductionFolder, "*.csproj", SearchOption.AllDirectories);
+            TestAllProjectsInFolder(_ProductionFolder);
+        }
+
+        private void TestAllProjectsInFolder(string folder)
+        {
+            var files = Directory.GetFiles(folder, "*.csproj", SearchOption.AllDirectories);
 
             foreach (var file in files)
             {
@@ -75,6 +88,7 @@ namespace VSUtilities.Tests
                 var obj = new Parser();
                 obj.ParseProjectFile(file);
 
+                Trace.WriteLine("");
                 Trace.WriteLine(obj);
             }
 

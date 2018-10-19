@@ -15,7 +15,10 @@ namespace VSUtilities
     {
         public string ProjectFile { get; private set; }
 
+        public string ParseResult { get; private set; }
+
         public string Platform { get; private set; }
+        public string PlatformTarget { get; private set; }
         public string AssemblyName { get; private set; }
         public string OutputPath { get; private set; }
         public string ToolsVersion { get; private set; }
@@ -29,10 +32,10 @@ namespace VSUtilities
             CompileItems = new List<string>();
         }
 
-        public void ParseProjectFiles(string folder)
-        {
+        //public void ParseProjectFiles(string folder)
+        //{
 
-        }
+        //}
 
         public string Items { get; private set; }
 
@@ -43,24 +46,21 @@ namespace VSUtilities
                 throw new FileNotFoundException("File not found.", projectFile);
             }
 
-            ProjectFile = projectFile;
+            this.ProjectFile = projectFile;
 
             var projectCollection = new ProjectCollection();
 
-            var coll = projectCollection.LoadedProjects;
-
-
             try
             {
-
-                var proj = projectCollection.LoadedProjects.First();
-
                 projectCollection.LoadProject(projectFile);
+
+                var coll = projectCollection.LoadedProjects;
+                var proj = projectCollection.LoadedProjects.FirstOrDefault();
 
                 AssemblyName = proj.GetPropertyValue("AssemblyName");
                 OutputPath = proj.GetPropertyValue("OutputPath");
-                Platform = proj.GetProperty("Platform").EvaluatedValue;
-                Platform = proj.GetProperty("PlatformTarget").EvaluatedValue;
+                Platform = proj.GetProperty("Platform").UnevaluatedValue;
+                Platform = GetPropertyValue(proj, "PlatformTarget");
                 ToolsVersion = proj.ToolsVersion;
 
                 var sb = new StringBuilder();
@@ -93,20 +93,40 @@ namespace VSUtilities
                 References = refs.OrderBy(x => x).ToList();
                 CompileItems = compiles.OrderBy(x => x).ToList();
 
+                this.ParseResult = "OK";
             }
             catch (System.Exception ex)
             {
+                ParseResult = "ERROR READING FILE: " + ex.Message;
                 Trace.WriteLine("ERROR READING FILE: " + ex.Message);
-                //throw;
+                //throw ex;
             }
 
+        }
+
+        private string GetPropertyValue(Project project, string key)
+        {
+            var result = (string)null;
+            var prop = project.GetProperty(key);
+            if (prop != null)
+            {
+                result = prop.UnevaluatedValue;
+            }
+            else
+            {
+                result = "[null]";
+            }
+            return result;
         }
 
         public override string ToString()
         {
             var result = new StringBuilder("[" + GetType().FullName + "]\n");
-            //result.AppendLine("ProjectFile: " + ProjectFile);
+
+            result.AppendLine("ProjectFile: " + ProjectFile);
+            result.AppendLine("ParseResult: " + ParseResult);
             result.AppendLine("Platform: " + Platform);
+            result.AppendLine("PlatformTarget: " + PlatformTarget);
             result.AppendLine("OutputPathProjectFile: " + OutputPath);
             result.AppendLine("AssemblyName: " + AssemblyName);
 
@@ -116,11 +136,11 @@ namespace VSUtilities
                 result.AppendLine("    " + item);
             }
 
-            result.AppendLine("CompileItems: ");
-            foreach (var item in CompileItems)
-            {
-                result.AppendLine("    " + item);
-            }
+            //result.AppendLine("CompileItems: ");
+            //foreach (var item in CompileItems)
+            //{
+            //    result.AppendLine("    " + item);
+            //}
 
             result.AppendLine("Items: ");
             result.AppendLine(Items);
