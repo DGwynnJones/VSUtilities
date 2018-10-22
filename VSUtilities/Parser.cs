@@ -14,30 +14,23 @@ namespace VSUtilities
     public class Parser
     {
         public string ProjectFile { get; private set; }
-
         public string ParseResult { get; private set; }
-
         public string Platform { get; private set; }
         public string PlatformTarget { get; private set; }
         public string AssemblyName { get; private set; }
         public string OutputPath { get; private set; }
         public string ToolsVersion { get; private set; }
 
-        public IList<string> References { get; private set; }
+        public IList<string> ProjectReferences { get; private set; }
+        public IList<string> DllReferences { get; private set; }
+
         public IList<string> CompileItems { get; private set; }
+        //public string Items { get; private set; }
 
         public Parser()
         {
-            References = new List<string>();
             CompileItems = new List<string>();
         }
-
-        //public void ParseProjectFiles(string folder)
-        //{
-
-        //}
-
-        public string Items { get; private set; }
 
         public void ParseProjectFile(string projectFile)
         {
@@ -46,7 +39,7 @@ namespace VSUtilities
                 throw new FileNotFoundException("File not found.", projectFile);
             }
 
-            this.ProjectFile = projectFile;
+            ProjectFile = projectFile;
 
             var projectCollection = new ProjectCollection();
 
@@ -57,13 +50,35 @@ namespace VSUtilities
                 var coll = projectCollection.LoadedProjects;
                 var proj = projectCollection.LoadedProjects.FirstOrDefault();
 
+                ProjectReferences = new List<string>();
+                DllReferences = new List<string>();
+
+                var projRefs = proj.GetItems("ProjectReference");
+                foreach (var item in projRefs)
+                {
+                    //this.ProjectReferences.Add(item.EvaluatedInclude);
+
+                    var name = item.Metadata.Where(x => x.Name == "Name").First().EvaluatedValue;
+
+                    ProjectReferences.Add(name);
+
+                }
+
+                var dllRefs = proj.GetItems("Reference");
+                foreach (var item in dllRefs)
+                {
+                    DllReferences.Add(item.EvaluatedInclude);
+                }
+
+
+
                 AssemblyName = proj.GetPropertyValue("AssemblyName");
                 OutputPath = proj.GetPropertyValue("OutputPath");
                 Platform = proj.GetProperty("Platform").UnevaluatedValue;
                 Platform = GetPropertyValue(proj, "PlatformTarget");
                 ToolsVersion = proj.ToolsVersion;
 
-                var sb = new StringBuilder();
+                //var sb = new StringBuilder();
 
                 var refs = new List<string>();
                 var compiles = new List<string>();
@@ -81,19 +96,19 @@ namespace VSUtilities
                             break;
 
                         default:
-                            sb.AppendLine(item.ItemType + ": " + item.EvaluatedInclude);
+                            //sb.AppendLine(item.ItemType + ": " + item.EvaluatedInclude);
                             break;
                     }
 
 
                 }
 
-                Items = sb.ToString();
+                //Items = sb.ToString();
 
-                References = refs.OrderBy(x => x).ToList();
+                //References = refs.OrderBy(x => x).ToList();
                 CompileItems = compiles.OrderBy(x => x).ToList();
 
-                this.ParseResult = "OK";
+                ParseResult = "OK";
             }
             catch (System.Exception ex)
             {
@@ -102,6 +117,16 @@ namespace VSUtilities
                 //throw ex;
             }
 
+        }
+
+        public string GetValidationMessage()
+        {
+            var result = "";
+            if (DllReferences.Where(x => x.StartsWith("Filmtrack")).Any())
+            {
+                result = "DllReferences contain Filmtrack references.";
+            }
+            return result;
         }
 
         private string GetPropertyValue(Project project, string key)
@@ -129,11 +154,25 @@ namespace VSUtilities
             result.AppendLine("PlatformTarget: " + PlatformTarget);
             result.AppendLine("OutputPathProjectFile: " + OutputPath);
             result.AppendLine("AssemblyName: " + AssemblyName);
+            result.AppendLine("Valid: " + GetValidationMessage());
 
-            result.AppendLine("References: ");
-            foreach (var item in References)
+            result.AppendLine("ProjectReferences: ");
+            foreach (var item in ProjectReferences.OrderBy(x => x))
             {
                 result.AppendLine("    " + item);
+            }
+
+            result.AppendLine("DllReferences: ");
+            foreach (var item in DllReferences.OrderBy(x => x))
+            {
+                if (item.ToUpper().StartsWith("FILMTRACK"))
+                {
+                    result.AppendLine("*   " + item);
+                }
+                else
+                {
+                    result.AppendLine("    " + item);
+                }
             }
 
             //result.AppendLine("CompileItems: ");
@@ -142,9 +181,9 @@ namespace VSUtilities
             //    result.AppendLine("    " + item);
             //}
 
-            result.AppendLine("Items: ");
-            result.AppendLine(Items);
-            result.AppendLine("");
+            //result.AppendLine("Items: ");
+            //result.AppendLine(Items);
+            //result.AppendLine("");
 
             return result.ToString();
 
