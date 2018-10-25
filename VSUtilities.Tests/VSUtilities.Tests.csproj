@@ -44,8 +44,9 @@
     <Reference Include="ObjectDumper, Version=2.0.18282.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectDumper.NET.2.0.18282.1\lib\net45\ObjectDumper.dll</HintPath>
     </Reference>
-    <Reference Include="SA.UnitTesting">
-      <HintPath>..\..\SA.Utilities\SA.UnitTesting\bin\Debug\SA.UnitTesting.dll</HintPath>
+    <Reference Include="SA.UnitTestingHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SA.Utilities\SA.UnitTesting\bin\Debug\SA.UnitTestingHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -1,6 +1,6 @@
 ﻿
 using NUnit.Framework;
-using SA.UnitTesting;
+using SA.UnitTestingHelper;
 using System.Diagnostics;
 using System.IO;
 
@@ -16,13 +16,12 @@ namespace VSUtilities.Tests
 
         string _ProductionFolder = @"C:\Users\dgwynnjones\source\repos\SA.RMS2\SA.Web";
         string _TestProjectFolder = @"C:\Users\dgwynnjones\source\repos\SA.Utilities";
-        
+
 
         [Test]
         public void Basic_()
         {
-            var obj = new Parser();
-            obj.ParseProjectFile(_TestProjectFile1);
+            var obj = new Parser(_TestProjectFile1);
 
             Trace.WriteLine(obj.ToString());
         }
@@ -31,8 +30,7 @@ namespace VSUtilities.Tests
         [Test]
         public void Open_Project_File()
         {
-            var obj = new Parser();
-            obj.ParseProjectFile(_TestProjectFile1);
+            var obj = new Parser(_TestProjectFile1);
 
             Trace.WriteLine(obj);
 
@@ -51,8 +49,7 @@ namespace VSUtilities.Tests
             foreach (var file in files)
             {
                 Trace.WriteLine("File: " + file);
-                var obj = new Parser();
-                obj.ParseProjectFile(file);
+                var obj = new Parser(file);
 
                 Trace.WriteLine(obj);
 
@@ -65,14 +62,16 @@ namespace VSUtilities.Tests
         [Test]
         public void Open_Project_Files_TestSolution()
         {
-            TestAllProjectsInFolder(_TestProjectFolder);
+            Assert.Throws<UnknownProjectFormatException>(() => { TestAllProjectsInFolder(_TestProjectFolder); });
         }
 
 
         [Test]
         public void Open_Project_Files_PROD()
         {
+
             TestAllProjectsInFolder(_ProductionFolder);
+
         }
 
         private void TestAllProjectsInFolder(string folder)
@@ -83,13 +82,20 @@ namespace VSUtilities.Tests
             {
                 var fi = new FileInfo(file);
 
-                Trace.WriteLine("File: " + fi.Name);
+                //Trace.WriteLine("File: " + fi.Name);
 
-                var obj = new Parser();
-                obj.ParseProjectFile(file);
+                try
+                {
+                    var obj = new Parser(file);
 
-                Trace.WriteLine("");
-                Trace.WriteLine(obj);
+                    Trace.WriteLine("");
+                    Trace.WriteLine(obj);
+                }
+                catch (System.Exception ex)
+                {
+
+                    throw ex;
+                }
             }
 
         }

@@ -43,8 +43,8 @@
     <Reference Include="ObjectDumper, Version=2.0.18282.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectDumper.NET.2.0.18282.1\lib\net45\ObjectDumper.dll</HintPath>
     </Reference>
-    <Reference Include="SA.UnitTesting">
-      <HintPath>..\..\SA.Utilities\SA.UnitTesting\bin\Debug\SA.UnitTesting.dll</HintPath>
+    <Reference Include="SA.Utilities">
+      <HintPath>..\..\SA.Utilities\SA.Utilities\bin\Debug\SA.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="SharpYaml, Version=1.6.4.0, Culture=neutral, PublicKeyToken=1ced8108e942bc02, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpYaml.1.6.4\lib\net45\SharpYaml.dll</HintPath>
@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DllReference.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
